@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    #RewriteBase /phpbatch3/part3
+    RewriteBase /phpbatch3/part3/public
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+</IfModule>
+
+
+# QSA (append query string from request to substituded URL)(ဒါမလာလဲဒီတိုင်းအလုပ်လုပ်တာပါပဲ)
+# L (last - stop processing rules)
